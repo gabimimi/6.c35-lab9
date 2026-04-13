@@ -1,10 +1,11 @@
 <script>
 	import { onMount } from 'svelte';
-	import mapboxgl from 'mapbox-gl';
-	import 'mapbox-gl/dist/mapbox-gl.css';
+	import mapboxgl from "mapbox-gl";
+	import "../../node_modules/mapbox-gl/dist/mapbox-gl.css";
 
 	// Inlined at build time: .env locally, or GitHub Actions secret PUBLIC_MAPBOX_ACCESS_TOKEN.
 	const token = import.meta.env.PUBLIC_MAPBOX_ACCESS_TOKEN ?? '';
+	console.log(token)
 	mapboxgl.accessToken = token;
 
 	onMount(() => {

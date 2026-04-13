@@ -20,6 +20,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Verify Mapbox token is available for build
+        env:
+          PUBLIC_MAPBOX_ACCESS_TOKEN: ${{ secrets.PUBLIC_MAPBOX_ACCESS_TOKEN }}
+        run: |
+          if [ -z "${PUBLIC_MAPBOX_ACCESS_TOKEN}" ]; then
+            echo "::error::PUBLIC_MAPBOX_ACCESS_TOKEN is empty. Add it under Settings → Secrets and variables → Actions → Secrets (Repository secrets), name exactly PUBLIC_MAPBOX_ACCESS_TOKEN. Environment-only secrets are not visible to this job."
+            exit 1
+          fi
+          echo "PUBLIC_MAPBOX_ACCESS_TOKEN is set (length ${#PUBLIC_MAPBOX_ACCESS_TOKEN} chars)."
+
       - name: build
         env:
           GITHUB_PAGES_REPO_NAME: ${{ github.event.repository.name }}
