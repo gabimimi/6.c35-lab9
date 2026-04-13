@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A4 — Poverty is solved globally</title>
+  <style>
+    :root {
+      --bg: #fffaf7;
+      --paper: #ffffff;
+      --ink: #2f2a2a;
+      --muted: #6f6461;
+      --line: #eadfd8;
+      --blue: #3f7cac;
+      --blue-soft: #eaf3fb;
+      --orange: #e38b45;
+      --orange-soft: #fff1e7;
+      --pink: #f7d9e6;
+      --shadow: 0 10px 30px rgba(80, 52, 38, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, #fff3f8 0%, transparent 25%),
+        radial-gradient(circle at top right, #fff0e6 0%, transparent 22%),
+        var(--bg);
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 40px auto 64px;
+      padding: 0 24px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(63,124,172,0.10), rgba(227,139,69,0.10));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 34px 30px;
+      margin-bottom: 28px;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.25;
+      margin-top: 0;
+      color: #2a2323;
+    }
+
+    h1 {
+      font-size: 2.35rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      margin: 0 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin: 0 0 10px;
+    }
+
+    h4 {
+      font-size: 1.07rem;
+      margin: 0 0 6px;
+    }
+
+    p {
+      margin: 10px 0 14px;
+      font-size: 1.02rem;
+    }
+
+    .subtitle {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .proposition {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.98rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .chart-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .chart-card.for-card {
+      border-top: 6px solid var(--blue);
+      background: linear-gradient(180deg, var(--blue-soft), #fff 22%);
+    }
+
+    .chart-card.against-card {
+      border-top: 6px solid var(--orange);
+      background: linear-gradient(180deg, var(--orange-soft), #fff 22%);
+    }
+
+    .chart-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    .for-card .chart-label {
+      background: rgba(63,124,172,0.12);
+      color: #2f6287;
+    }
+
+    .against-card .chart-label {
+      background: rgba(227,139,69,0.14);
+      color: #a25d24;
+    }
+
+    .chart-image {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      display: block;
+      background: #faf7f5;
+      padding: 8px;
+      margin-top: 8px;
+    }
+
+    .position {
+      margin-top: 4px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .decision {
+      padding: 18px 18px 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      margin: 16px 0;
+      background: #fffdfa;
+    }
+
+    .score {
+      display: inline-block;
+      margin: 4px 0 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-size: 0.95rem;
+    }
+
+    .reflection {
+      margin-top: 28px;
+      background: linear-gradient(180deg, rgba(247,217,230,0.22), #fff 18%);
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        margin-top: 20px;
+        padding: 0 16px;
+      }
+
+      .hero,
+      .card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      h2 {
+        font-size: 1.45rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>Assignment 4 — Persuasive or Deceptive Visualization</h1>
+      <p class="subtitle">A reflection on how visual framing, aggregation, and omission shape the story told by data.</p>
+      <div class="proposition"><strong>Proposition:</strong> “Poverty is solved globally.”</div>
+    </section>
+
+    <section class="two-col">
+      <!-- LEFT COLUMN -->
+      <section class="chart-column">
+        <article class="card chart-card for-card">
+          <span class="chart-label">Chart in favor</span>
+          <h3>The “End of Poverty” Story Isn't Crazy</h3>
+          <p class="position">Position: supports the proposition that global poverty is basically being solved.</p>
+          <img class="chart-image" src="prostatement.png" alt="Chart in favor of the proposition" />
+        </article>
+
+        <section class="card">
+          <h2>Design Decisions and Rationale</h2>
+          <h3>Visualization 1: “The 'End of Poverty' Story Isn't Crazy”</h3>
+          <p class="position">Position: supports the proposition that global poverty is basically being solved.</p>
+
+          <div class="decision">
+            <h4>1. I centered the dashboard around a long-term line chart of extreme poverty decline.</h4>
+            <div class="score">Score: +1.5</div>
+            <p>This is the most important design choice in the first dashboard because it establishes the entire argument before the viewer even looks at the supporting charts. The main line chart shows a real and substantial decline in the global extreme poverty rate over time, so placing it at the center and giving it the most visual prominence makes the dashboard immediately legible and persuasive. A long downward slope is one of the clearest and most intuitively powerful visual forms: even without reading the axis labels carefully, the viewer can instantly understand that something has improved. That immediacy matters because first impressions shape how the rest of the dashboard will be interpreted. Once the audience sees a strong, clean decline in the headline chart, they are more likely to read the surrounding charts as supporting evidence rather than as independent or potentially conflicting context.</p>
+            <p>Using a full-time series rather than a single “before vs. after” comparison also makes the argument feel more trustworthy. A before-and-after snapshot can look selective, as though I chose two convenient years to exaggerate progress, while a long-term trend suggests continuity, stability, and historical depth. It communicates that this is not a one-time fluctuation or short-lived improvement, but a durable global pattern. At the same time, this choice is still persuasive because it smooths the viewer's attention toward the overall direction of change rather than toward interruptions, regional variation, or debates about where the gains came from. In other words, the chart is highly earnest in the sense that it presents a real and meaningful trend, but it is also strategically powerful because it turns a complex global issue into one clear visual takeaway: poverty has been going down for decades, and that alone makes the proposition feel much more plausible.</p>
+          </div>
+
+          <div class="decision">
+            <h4>2. I paired poverty decline with supporting indicators like education, child mortality, GDP growth, and vulnerable employment, but I also styled some of that evidence in a way that makes the progress feel even stronger than it is.</h4>
+            <div class="score">Score: -1</div>
+            <p>This decision helps build a coherent story that global poverty is being solved by surrounding the main poverty chart with several indicators that all move in an optimistic direction. That makes the dashboard persuasive because it suggests broad-based improvement rather than a single isolated success. However, one subtle design choice in the GDP-by-region chart makes that progress feel more dramatic than the data alone would suggest. The 2019 circles have a thicker, darker blue outline, and are scaled to a higher value, while the 1980 circles are lighter, visually softer, and not scaled. Even if the underlying values are not changed, that contrast creates the impression that the outer circles are much larger, which pushes the viewer to read the change as more abrupt and substantial.</p>
+            <p>There is also an important omission in the data in general: the comparison across time is affected by differences in data coverage. The 1980 GDP aggregate is based on information from only about 43% of countries, while the 2019 aggregate covers around 86%. So the larger 2019 total does not only reflect real economic growth; it also reflects a more complete dataset. Because the chart does not disclose this directly, it encourages the audience to interpret the difference as purely developmental progress. That makes this design choice effective, but also somewhat deceptive, since it presents the comparison as more straightforward and comparable than it actually is.</p>
+          </div>
+
+          <div class="decision">
+            <h4>3. I used an optimistic title and subtitle to frame the reader before they inspect the details.</h4>
+            <div class="score">Score: -0.5</div>
+            <p>The title, “The 'End of Poverty' Story Isn't Crazy,” is intentionally assertive and nudges the audience toward a sympathetic reading of the charts. The subtitle reinforces this by presenting the indicators as mutually supportive evidence of progress. This worked because titles strongly shape interpretation, though I know it is a mild framing device rather than a neutral description.</p>
+          </div>
+
+          <div class="decision">
+            <h4>4. I used a clean layout and a restrained color palette to make the dashboard feel trustworthy, coherent, and institutionally grounded.</h4>
+            <div class="score">Score: +1</div>
+            <p>The structured layout helps the viewer move from the main poverty chart to the supporting evidence without confusion, which makes the overall argument easier to follow and more convincing. The muted blues and oranges also make the dashboard feel analytical rather than sensational, so the persuasion comes less from visual drama and more from an appearance of calm, data-driven credibility. This was intentional: I wanted the dashboard to look like a serious policy or research communication rather than an opinion piece.</p>
+            <p>The color choice also carries an additional layer of meaning. Blue echoes the visual identity of the World Bank, which is the source of much of the data, while orange references J-PAL, an institution strongly associated with poverty research and evidence-based development work. Because these colors are already linked to recognizable entities in the poverty-policy space, they give the dashboard a subtle sense of legitimacy and relevance. This is true in both dashboards. Even though the palette does not distort the data, it still influences interpretation by making the visuals feel more authoritative and professionally anchored in the field.</p>
+          </div>
+
+          <div class="decision">
+            <h4>5. I emphasized aggregate global progress rather than distributional differences within countries or between income groups.</h4>
+            <div class="score">Score: -1.5</div>
+            <p>This is one of the most important persuasive choices in the dashboard because it makes progress appear broad, consistent, and widely shared. By relying on worldwide averages and broad regional comparisons, I present poverty reduction as a global story of improvement, even though aggregate gains can easily conceal how unevenly those gains are distributed. Averages flatten variation: they can make conditions look better overall while hiding the fact that many populations may still be excluded from that progress. I chose this approach because it makes the proposition easier to defend visually, but it also demonstrates how omission can function as a subtle form of deception.</p>
+            <p>This happens especially in the GDP-by-region chart. Dividing the world into regions gives the impression that the analysis is more detailed and that progress has been checked at a deeper level, which makes the argument seem more credible. However, those regions are still extremely large and internally diverse, so they do not actually show whether growth was broadly shared within countries or whether it was concentrated among specific places or groups. In that sense, the chart creates a feeling of nuance without fully providing it. It suggests that improvement is happening “everywhere,” when in reality, regional aggregation can still hide major internal inequality and uneven development.</p>
+          </div>
+        </section>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <section class="chart-column">
+        <article class="card chart-card against-card">
+          <span class="chart-label">Chart against</span>
+          <h3>Poverty Isn't Gone: It's Just Harder to See</h3>
+          <p class="position">Position: argues against the proposition that poverty is solved globally.</p>
+          <img class="chart-image" src="antistatement.png" alt="Chart against the proposition" />
+        </article>
+
+        <section class="card">
+          <h2>Design Decisions and Rationale</h2>
+          <h3>Visualization 2: “Poverty Isn't Gone: It's Just Harder to See”</h3>
+          <p class="position">Position: argues against the proposition that poverty is solved globally.</p>
+
+          <div class="decision">
+            <h4>1. I shifted the focus from averages to inequality, vulnerability, and incompleteness of the data.</h4>
+            <div class="score">Score: +1.5</div>
+            <p>Instead of disputing that some indicators improved, this dashboard changes the terms of the argument by asking who actually benefits from that improvement and who remains excluded from it. I intentionally tried to center the analysis on the groups most affected by poverty, rather than on people who are already economically secure. From the perspective of this proposition, the conditions of wealthier populations are not the most informative measure, because their stability does little to show whether poverty has truly been solved. What matters more is whether the people who are most vulnerable have experienced meaningful and widespread improvement. That shift in focus makes the rebuttal more persuasive because it exposes the weakness of the first narrative: aggregate progress is not the same thing as broad security or justice.</p>
+            <p>This worked especially well because the inequality bar chart and the reporting-completeness map make the counterargument feel structural rather than anecdotal. Instead of relying on isolated examples of hardship, the dashboard suggests that the problem lies in how progress is distributed and even in who gets counted in the first place. By foregrounding the populations that remain at risk, the visualization argues that the right question is not whether some people are doing better, but whether those most harmed by poverty are no longer living in precarious conditions. Framing the dashboard this way makes the analysis more ethically grounded, because it evaluates success from the standpoint of those for whom the issue is still urgent, rather than from the standpoint of those who were never truly at risk.</p>
+          </div>
+
+          <div class="decision">
+            <h4>2. I used the large “1,850 million people lived under $3.20/day” annotation as the emotional and rhetorical center.</h4>
+            <div class="score">Score: -0.5</div>
+            <p>This big-number callout is persuasive because it transforms what could otherwise remain an abstract statistical discussion into something that feels human and morally difficult to ignore. A percentage can seem distant, especially when it represents a relatively small share of the global population, but an absolute number in the billions immediately reframes the issue. It reminds the viewer that even if poverty appears smaller when expressed proportionally, it still represents an enormous number of real people living with deprivation every day. The annotation, therefore, shifts the reader away from a detached, technical reading of the data and toward a more human interpretation of what the numbers actually imply.</p>
+            <p>I also reinforced this by showing the exact number of dollar bills and coins that make up $3.20, which helps translate the poverty threshold into something much more tangible and understandable. Rather than leaving “$3.20/day” as an abstract economic cutoff, this design choice makes the viewer picture how little money that actually is in everyday terms. Seeing the threshold broken down into a few physical units of currency makes the amount feel almost shockingly small, which strengthens the argument without changing the data itself. The dashboard does not directly say “this is an impossible amount to live on,” but by visualizing the actual money, it encourages the viewer to reach that conclusion on their own. In that sense, the annotation is persuasive not only because of the large population number, but also because it makes both parts of the claim, the number of people and the amount of money, feel immediate, concrete, and real.</p>
+          </div>
+
+          <div class="decision">
+            <h4>3. I used more urgent wording in the title and annotations to challenge the optimistic framing of the first dashboard.</h4>
+            <div class="score">Score: -1</div>
+            <p>The title, “Poverty Isn't Gone: It's Just Harder to See,” suggests that the real issue is invisibility rather than absence, which pushes readers to become suspicious of simple progress narratives. The annotation about missing data being a “lower bound” also encourages a more critical interpretation of the dataset. This framing is effective, but it is also more openly rhetorical than neutral reporting.</p>
+          </div>
+
+          <div class="decision">
+            <h4>4. I incorporated missing-data geography as evidence, not just as a technical footnote.</h4>
+            <div class="score">Score: +2</div>
+            <p>This is one of the most earnest choices in the dashboard because it refuses to treat missing data as a minor methodological inconvenience and instead presents it as part of the argument itself. In many visualizations, absent information is either ignored or pushed into a note at the bottom, which encourages the viewer to read the dataset as if it were a full and neutral picture of reality. Here, I wanted to make the opposite point: the places that are hardest to measure are often also the places where poverty and institutional vulnerability may be most severe. By mapping where reporting is incomplete, the dashboard asks the viewer to think not only about what the data says, but also about what the data cannot confidently capture.</p>
+            <p>The global dataset may be systematically more complete for places that are easier to monitor and govern, while being thinner exactly where deprivation may be hardest to quantify. In other words, the problem is not simply that some values are missing; it is that the missingness itself may distort the overall story by making the world look more knowable, and potentially less unequal, than it really is. Highlighting that geography turns uncertainty into a substantive finding rather than a disclaimer.</p>
+            <p>This design choice also makes the dashboard more ethical because it resists the temptation to overclaim. Instead of presenting the available numbers as the whole truth, it openly acknowledges that any optimistic conclusion about poverty reduction is limited by who gets counted and who does not. That transparency strengthens the counterargument: if large parts of the world are underreported, then the apparent scale of improvement should be interpreted more cautiously. In that sense, the map does not just say “the data is incomplete”; it suggests that the available evidence may function as a lower bound, meaning reality could be worse than the charts imply. Making that visible is both analytically honest and rhetorically powerful, because it challenges the viewer to see uncertainty not as space, but as part of the story of global poverty itself.</p>
+          </div>
+
+          <div class="decision">
+            <h4>5. I contrasted high-income and low-income trajectories in health and education instead of only showing global averages.</h4>
+            <div class="score">Score: +1</div>
+            <p>This choice makes uneven progress visible in a way that global averages cannot. Even when both high-income and low-income groups show improvement over time, the persistent distance between them still matters. That visual gap supports the claim that poverty has not been “solved” in any meaningful universal sense, because aggregate improvement does not erase the fact that access to health and education remains deeply unequal across the world. I chose this approach instead of another global summary because disparity, not just average progress, is central to the counterargument.</p>
+            <p>These charts also intentionally place more emphasis on the conditions of lower-income countries than on the continued success of wealthier ones. The key analytical question is not whether already-advantaged countries are doing well, but whether the populations most vulnerable to poverty are catching up in a meaningful way. If high-income countries continue to perform strongly, that is not especially surprising; what matters more is that low-income countries still face significantly worse outcomes, even after decades of global development.</p>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <section class="card reflection">
+      <h2>Final Reflection</h2>
+      <p>Designing these two dashboards made it clear to me that persuasive visualization is not just about changing colors or writing a stronger title; it is about deciding what counts as the story. The most straightforward part was finding evidence for the optimistic dashboard, because aggregate global indicators really do show major long-run improvements in extreme poverty, health, education, and employment. The harder part was realizing that the opposing dashboard did not need to prove those trends false. Instead, it could reframe the question by focusing on inequality, fragility, and data absence. What surprised me most was how easy it was to make both arguments feel convincing using the same broad dataset. The biggest difference was not the raw numbers themselves, but the level of aggregation, the surrounding context, and what I chose to foreground or leave in the background.</p>
+      <p>This topic also feels personal to me. I come from one of the countries represented on the poorer side of the inequality charts, so I have not experienced poverty and inequality only as abstract numbers on a graph. I have seen firsthand how different life can look depending on where you are born, what resources surround you, and how invisible hardship can become to people who have never had to live with it. Because of that, I get especially frustrated when wealthy people use broad global progress to suggest that everything is fine now, or that poverty is basically solved. Aggregate improvement matters, but it does not erase the reality that millions of people still live in deeply precarious conditions. That personal experience is part of why I care so much about economics: I want to understand these systems seriously enough that one day I can help write policy that does not just celebrate growth at the top, but actually helps poor and ultra-poor communities get out of that hole.</p>
+      <p>This assignment changed how I think about ethical analysis and visualization. I do not think ethical visualization means removing persuasion altogether, because every chart already reflects choices about framing, scale, comparison, and emphasis. Instead, ethical practice depends on whether those choices help viewers understand the limits and implications of the data, or whether they quietly steer viewers toward conclusions that the data cannot fully support. For me, acceptable persuasion includes emphasis, narrative structure, and interpretive framing, as long as the underlying evidence remains legible and the omissions do not fundamentally distort the claim. It becomes misleading when a visualization uses true facts to imply something broader, cleaner, or more certain than the data really shows. Working on these two dashboards made that boundary feel less like a hard line and more like a spectrum of responsibility.</p>
+    </section>
+
+  </main>
+</body>
+</html>
