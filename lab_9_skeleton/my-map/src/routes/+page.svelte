@@ -1,2 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>My Map</h1>
+<p>
+	An interactive web map for exploring bike-share and geographic data, built with SvelteKit and
+	MapLibre GL.
+</p>
+
+<style>
+	@import url("$lib/global.css");
+</style>
