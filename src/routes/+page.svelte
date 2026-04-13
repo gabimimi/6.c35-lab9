@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import mapboxgl from "mapbox-gl";
-	import "../../node_modules/mapbox-gl/dist/mapbox-gl.css";
+	import "mapbox-gl/dist/mapbox-gl.css";
 	import * as d3 from "d3";
 	import { PUBLIC_MAPBOX_ACCESS_TOKEN } from '$env/static/public';
 
