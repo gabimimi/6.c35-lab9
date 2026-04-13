@@ -11,7 +11,8 @@ const base = repo ? `/${repo}` : '';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter({ fallback: '404.html' }),
+		// SPA shell must be index.html so GitHub Pages serves /repo/ (404.html is not used as directory index).
+		adapter: adapter({ fallback: 'index.html' }),
 		paths: {
 			base,
 		},

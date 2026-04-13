@@ -3,11 +3,13 @@
 	import mapboxgl from 'mapbox-gl';
 	import 'mapbox-gl/dist/mapbox-gl.css';
 
-	// Prefer .env (see .env.example). You can also assign a string here for quick local tests.
-	mapboxgl.accessToken =
-		import.meta.env.PUBLIC_MAPBOX_ACCESS_TOKEN ?? 'your access token here';
+	// Inlined at build time: .env locally, or GitHub Actions secret PUBLIC_MAPBOX_ACCESS_TOKEN.
+	const token = import.meta.env.PUBLIC_MAPBOX_ACCESS_TOKEN ?? '';
+	mapboxgl.accessToken = token;
 
 	onMount(() => {
+		if (!token) return;
+
 		const map = new mapboxgl.Map({
 			container: 'map',
 			style: 'mapbox://styles/mapbox/streets-v12',
@@ -23,6 +25,13 @@
 
 <div class="page">
 	<h1>🚴Bikewatching</h1>
+	{#if !token}
+		<p class="token-warning">
+			Map is disabled: no Mapbox token was available when this site was built. Add a repository
+			secret named <code>PUBLIC_MAPBOX_ACCESS_TOKEN</code> (same value as in your local
+			<code>.env</code>), then push again or re-run the deploy workflow.
+		</p>
+	{/if}
 	<div id="map"></div>
 </div>
 
@@ -39,6 +48,20 @@
 
 	h1 {
 		flex-shrink: 0;
+	}
+
+	.token-warning {
+		flex-shrink: 0;
+		margin: 0 0 0.75rem;
+		padding: 0.75rem 1rem;
+		background: #fff3cd;
+		border: 1px solid #e6d89c;
+		border-radius: 6px;
+		font-size: 0.95rem;
+	}
+
+	.token-warning code {
+		font-size: 0.88em;
 	}
 
 	#map {
