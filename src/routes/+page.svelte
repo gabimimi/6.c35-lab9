@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
 	import mapboxgl from "mapbox-gl";
-	import "mapbox-gl/dist/mapbox-gl.css";
 	import * as d3 from "d3";
 	import { PUBLIC_MAPBOX_ACCESS_TOKEN } from '$env/static/public';
 
@@ -282,6 +281,9 @@
 	}
 
 	#map {
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
 		background: #d4e4f4;
